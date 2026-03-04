@@ -1,4 +1,4 @@
-<?php
+  <?php
 // show errors for debugging
 require_once 'assets/includes/display-errors.php';
 // include database connection
@@ -18,21 +18,12 @@ require_once 'assets/includes/header.php';
     <link rel="stylesheet" href="assets/css/all.min.css">
     <!-- Custom styles -->
     <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body>
-
-
-
-    <main>
-
-    </main>
-
-
-</body>
-<?php
-//include footer
-require_once 'assets/includes/footer.php';
-?>
-
-</html>
+</head><footer class="container text-muted d-flex justify-content-between mt-4">
+        <p class="text-muted">FOOTER TEXT HÄR </p>
+        <p>
+            <i class="fab fa-facebook icon-facebook"></i>
+            <i class="fab fa-twitter icon-twitter"></i>
+            <i class="fab fa-instagram icon-instagram"></i>
+            <i class="fab fa-flickr icon-flickr"></i>
+        </p>
+    </footer>
