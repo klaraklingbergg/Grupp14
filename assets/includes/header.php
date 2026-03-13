@@ -3,7 +3,7 @@
 
 <?php
 // show errors for debugging
-require_once 'assets/includes/display-errors.php';
+require_once 'assets/includes/display_errors.php';
 // include database connection
 require_once 'assets/config/db.php';
 //include header

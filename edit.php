@@ -1,14 +1,13 @@
-<!--REGISTRERING AV ANVÄNDARE-->
-<!--med länk till login.php-->
-
 <?php
-// show errors for debugging
-require_once 'assets/includes/display_errors.php';
-// include database connection
+// Include database connection
 require_once 'assets/config/db.php';
-//register info to database
-require_once 'assets/functions/insert.php';
-//include header
+// Update information to database
+require_once 'assets/functions/update.php';
+// Show errors for debugging
+require_once 'assets/includes/display_errors.php';
+// Get specific information about user
+require_once 'assets/functions/select-id.php';
+// Include header
 require_once 'assets/includes/header.php';
 ?>
 
@@ -28,35 +27,34 @@ Användare registrerad!
         }
     }
     ?>
-    <form action="add.php" method="post">
+    <form action="edit.php" method="post">
         <div class="row mb-3">
             <label for="firstname" class="col-1 col-form-label">Förnamn</label>
             <div class="col-4">
-                <input type="text" class="form-control" id="firstname" name="firstname">
+                <input type="text" class="form-control" id="firstname" name="firstname"
+                    value="<?php echo $row['firstname']; ?>">
             </div>
         </div>
         <div class="row mb-3">
             <label for="lastname" class="col-1 col-form-label">Efternamn</label>
             <div class="col-4">
-                <input type="text" class="form-control" id="lastname" name="lastname">
+                <input type="text" class="form-control" id="lastname" name="lastname" value="<?php
+                                                                                                echo $row['lastname']; ?>">
             </div>
         </div>
         <div class="row mb-3">
-            <label for="email" class="col-1 col-form-label">Email</label>
+            <label for="email" class="col-1 col-form-label">E-post</label>
             <div class="col-4">
-                <input type="email" class="form-control" id="email" name="email">
+                <input type="email" class="form-control" id="email" name="email" value="<?php
+                                                                                        echo $row['email']; ?>">
             </div>
         </div>
-        <div class="row mb-3">
-            <label for="password" class="col-1 col-form-label">Lösenord</label>
-            <div class="col-4">
-                <input type="password" class="form-control" id="password" name="password">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-success" name="register">
-            <i class="fa-solid fa-user-check"></i>
-            Registrera
+
+        <button class="btn btn-primary d-flex" type="submit" name="modify">
+            <i class="fa-solid fa-pen"></i> Uppdatera information
         </button>
+        <input type="hidden" name="id" value="<?php echo $row['user_id']; ?>">
+
     </form>
 
     <div class="mt-4 pt-3 border-top col-5">
