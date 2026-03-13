@@ -1,3 +1,6 @@
+<!--HEADER, redigeras här för att ändra headern på alla sidor-->
+<!--Lägg till genom att skriva detta under på varje sida-->
+
 <?php
 // show errors for debugging
 require_once 'assets/includes/display-errors.php';

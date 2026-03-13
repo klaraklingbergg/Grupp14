@@ -1,3 +1,5 @@
+<!-- DATABASE KONFIGURATION -->
+ <!--Kopplar php till MySQL databasen-->
 <?php
 // Defines information for database connection
 define('DB_HOST', 'mysql');

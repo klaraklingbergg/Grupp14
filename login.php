@@ -1,3 +1,4 @@
+<!--INLOGNINGS SIDA-->
 <?php
 // show errors for debugging
 require_once 'assets/includes/display-errors.php';
