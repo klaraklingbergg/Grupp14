@@ -25,10 +25,30 @@ require_once 'assets/includes/header.php';
 
 <body>
 
-
-
     <main>
+    <h1>Skillswap</h1>
+        <p>En plattform där studenter kan dela sina kunskaper med varandra</p>
+    <h2>Hur fungerar det?</h2>
+        <p>Skapa en profil, skapa ett inlägg, hjälp andra</p>
+    <h2>Taggar</h2>
+    <ul>
+        <li>
+            <a href="#" class= "badge bg-primary">#Programmering</a>
+        </li>
 
+        <li>
+            <a href="#" class= "badge bg-primary">#Matematik</a>
+
+        </li>
+
+        <li>
+            <a href="#" class= "badge bg-primary">#Design</a>
+        </li>
+
+        <li>
+        <a href="#" class= "badge bg-primary">#UX</a>
+        </li>
+    </ul>
     </main>
 
 
