@@ -1,4 +1,3 @@
-<!--redigera inlägg-->
 <?php
 // Include database connection
 require_once 'assets/config/db.php';
@@ -11,6 +10,8 @@ require_once 'assets/functions/select-id.php';
 // Include header
 require_once 'assets/includes/header.php';
 ?>
+
+<!--redigera inlägg-->
 
 <main class="container mt-5">
     <?php

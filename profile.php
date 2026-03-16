@@ -1,5 +1,3 @@
-<!--PERSONLIG PROFIL SIDA-->
-<!--ser sina egna inlägg, kan redigera och ta bort sina inlägg-->
 <?php
 // show errors for debugging
 require_once 'assets/includes/display_errors.php';
@@ -10,6 +8,10 @@ require_once 'assets/functions/insert.php';
 //include header
 require_once 'assets/includes/header.php';
 ?>
+
+<main>
+    
+</main>
 
 <?php
 //include footer

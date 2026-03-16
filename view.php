@@ -1,91 +1,53 @@
-<!-- Flöde -->
-<!--LISTA AV ALLA inlägg-->
 <?php
+// Include header
+require_once 'assets/includes/header.php';
 // Show errors for debugging
 require_once 'assets/includes/display_errors.php';
 // Include database connection
 require_once 'assets/config/db.php';
 // Get information to database
 require_once 'assets/functions/select.php';
-// Include header
-require_once 'assets/includes/header.php';
+
 ?>
 
+<!-- Flöde -->
+<!--LISTA AV ALLA inlägg-->
+
 <main class="container mt-5">
+    <h2 class="mb-4">Flöde</h2>
+
     <?php
-    // Checks if an action is set
     if (isset($_GET['action'])) {
-        // Checks which action is set
         switch ($_GET['action']) {
-            case 'updated':
-                echo '
-<div class="alert alert-success">
-Posten har uppdaterats i databasen!
-</div>
-';
-
+            case 'posted':
+                echo '<div class="alert alert-success">Ditt inlägg har publicerats i flödet!</div>';
                 break;
-        }
-    }
-
-    // Checks if an action is set
-    if (isset($_GET['action'])) {
-        // Checks which action is set
-        switch ($_GET['action']) {
             case 'deleted':
-                echo '
-<div class="alert alert-danger">
-Posten har raderats från databasen!
-</div>
-';
+                echo '<div class="alert alert-danger">Inlägget har raderats.</div>';
                 break;
-        }
+            case 'updated':
+                echo '<div class="alert alert-success">Inlägget har uppdaterats.</div>';
+                break;
     }
 
+    // Kolla om det finns några inlägg
+    if ($stmt->rowCount() > 0) {
+        while ($row = $stmt->fetch()) {
     ?>
-    <table class="table table-bordered mt-4">
-        <tr>
-            <th>#</th>
-            <th>Förnamn</th>
-            <th>Efternamn</th>
-            <th>E-post</th>
-            <th colspan="2">Administration</th>
-        </tr>
-        <?php
-        // Checks whether database is empty
-        if ($stmt->rowCount() > 0) {
-            // Get users from database
-            while ($row = $stmt->fetch()) {
-                // Prints out users to HTML
-                echo '
-<tr>
-<td>' . $row['user_id'] . '</td>
-<td>' . $row['firstname'] . '</td>
-<td>' . $row['lastname'] . '</td>
-<td>' . $row['email'] . '</td>
-<td>
-<i class="fa-solid fa-pen-to-square"></i>
-<a href="edit.php?id=' . $row['user_id'] . '">Uppdatera</a>
-</td>
-<td>
-<i class="fa-solid fa-trash"></i>
-<a href="remove.php?id=' . $row['user_id'] . '">Radera</a>
-</td>
+            <div>
+<!--Cards med de olika inläggen i flödet-->
 
-</tr>
-';
-            }
-        } else {
-            // Prints out message that database is empty
-            echo '
-<tr>
-<td colspan="5">Inga användare i databasen</td>
-</tr>
-';
+            </div>
+                     
+                
+            
+    <!--Om det inte finns några inlägg i flödet-->        
+    <?php
         }
-        ?>
-
-    </table>
+    } else {
+        echo '<div class="alert alert-info">Det finns inga frågor i flödet ännu. Bli den första att fråga!</div>';
+    }
+    ?>
 </main>
 
 

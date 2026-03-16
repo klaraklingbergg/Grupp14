@@ -1,4 +1,3 @@
-<!--Ta bort sitt inlägg-->
 <?php
 // Include database connection
 require_once 'assets/config/db.php';
@@ -12,6 +11,7 @@ require_once 'assets/functions/select-id.php';
 require_once 'assets/includes/header.php';
 ?>
 
+<!--Ta bort sitt inlägg-->
 <main class="container mt-5">
     <form action="remove.php" method="post">
         <div class="row">

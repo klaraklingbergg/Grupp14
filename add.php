@@ -1,17 +1,16 @@
-<!--Skapa inlägg-->
-<!--skickas till flöde-->
-
-
 <?php
+//include header
+require_once 'assets/includes/header.php';
 // show errors for debugging
 require_once 'assets/includes/display_errors.php';
 // include database connection
 require_once 'assets/config/db.php';
 //register info to database
 require_once 'assets/functions/insert.php';
-//include header
-require_once 'assets/includes/header.php';
+
 ?>
+
+<!--Skapa konto-->
 
 <main class="container mt-5">
     <?php
@@ -58,6 +57,14 @@ Användare registrerad!
             <i class="fa-solid fa-user-check"></i>
             Registrera
         </button>
+        <div class="mt-4 pt-3 border-top col-5">
+            <p class="text-muted">
+                Har du redan ett konto?
+                <a href="login.php" class="text-primary fw-bold text-decoration-none">
+                    Logga in här.
+                </a>
+            </p>
+        </div>
     </form>
 
 </main>
