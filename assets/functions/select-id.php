@@ -1,15 +1,13 @@
 <?php
-// Checks whether ID is available as GET
+// Kontrollera att ID finns i länken
 if (isset($_GET['id'])) {
-// Gets specific post from database
-$sql = 'SELECT * FROM users WHERE user_id = :id';
-// Prepares a query
-$stmt = $dbh->prepare($sql);
-// Connects GET-variable with db containers
-$stmt->bindValue(':id', $_GET['id']);
-// Sends query to database
-$stmt->execute();
-// Adds all information about user to variable
-$row = $stmt->fetch();
+    $id = $_GET['id'];
+
+    $sql = "SELECT * FROM users WHERE user_id = :id";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+
+    // HÄR SKAPAS $row
+    $row = $stmt->fetch();
 }
-?>

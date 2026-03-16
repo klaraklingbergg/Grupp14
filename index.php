@@ -1,4 +1,5 @@
 <!--STARTSIDA-->
+<!--bild,rubrik, beskrivning, knappar för att skapa inlägg-->
 
 <?php
 // show errors for debugging

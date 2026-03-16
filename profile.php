@@ -1,4 +1,5 @@
 <!--PERSONLIG PROFIL SIDA-->
+<!--ser sina egna inlägg, kan redigera och ta bort sina inlägg-->
 <?php
 // show errors for debugging
 require_once 'assets/includes/display_errors.php';

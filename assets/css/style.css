@@ -1,3 +1,37 @@
 /*EGEN CSS*/
 /*Försök använda så lite egen CSS som möjligt, och istället 
 använda Bootstraps inbyggda klasser */
+
+/*Gör så att hela sidan täcker hela skärmens höjd */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+/*Sätt upp bodyn som en vertikal stapel, Header-> Main-> Footer */
+body {
+    display: flex;
+    flex-direction: column;
+}
+/*Säg till main-taggen att växa och ta upp allt ledigt utrymme,
+Knuffa ned footern */
+main {
+    flex: 1;
+}
+
+/* Ger alla rubriker lite luft nedåt */
+h1, h2, h3 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Gör att tabeller inte ser så trånga ut */
+.table {
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+/* Om du vill ha en mjukare känsla på dina knappar */
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+}

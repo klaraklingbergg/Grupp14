@@ -1,5 +1,6 @@
-<!--REGISTRERING AV ANVÄNDARE-->
-<!--med länk till login.php-->
+<!--Skapa inlägg-->
+<!--skickas till flöde-->
+
 
 <?php
 // show errors for debugging
@@ -58,15 +59,6 @@ Användare registrerad!
             Registrera
         </button>
     </form>
-
-    <div class="mt-4 pt-3 border-top col-5">
-        <p class="text-muted">
-            Har du redan ett konto?
-            <a href="login.php" class="text-primary fw-bold text-decoration-none">
-                Logga in här.
-            </a>
-        </p>
-    </div>
 
 </main>
 

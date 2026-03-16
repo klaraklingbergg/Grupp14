@@ -1,5 +1,5 @@
-<!-- ADMINISTRATIONS VY -->
-<!--LISTA AV ALLA ANVÄNDARE-->
+<!-- Flöde -->
+<!--LISTA AV ALLA inlägg-->
 <?php
 // Show errors for debugging
 require_once 'assets/includes/display_errors.php';
@@ -23,9 +23,25 @@ require_once 'assets/includes/header.php';
 Posten har uppdaterats i databasen!
 </div>
 ';
+
                 break;
         }
     }
+
+    // Checks if an action is set
+    if (isset($_GET['action'])) {
+        // Checks which action is set
+        switch ($_GET['action']) {
+            case 'deleted':
+                echo '
+<div class="alert alert-danger">
+Posten har raderats från databasen!
+</div>
+';
+                break;
+        }
+    }
+
     ?>
     <table class="table table-bordered mt-4">
         <tr>

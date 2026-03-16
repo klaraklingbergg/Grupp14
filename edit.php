@@ -1,3 +1,4 @@
+<!--redigera inlägg-->
 <?php
 // Include database connection
 require_once 'assets/config/db.php';

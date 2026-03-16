@@ -1,6 +1,4 @@
-<!-- DATABASE KONFIGURATION -->
- <!--Kopplar php till MySQL databasen-->
- <?php
+<?php
 // Defines information for database connection
 define('DB_HOST', 'mysql');
 define('DB_NAME', 'codespaces');
