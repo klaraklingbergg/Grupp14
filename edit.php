@@ -30,22 +30,27 @@ Inlägget har uppdaterats!
     }
     ?>
     <form action="edit.php" method="post">
-    <div class="mb-3">
-        <label class="form-label">Rubrik</label>
-        <input type="text" class="form-control" name="subject" value="<?php echo $row['subject']; ?>">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Meddelande</label>
-        <textarea class="form-control" name="message" rows="4"><?php echo $row['message']; ?></textarea>
-    </div>
+        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+        <div class="mb-3">
+            <label class="form-label">Rubrik</label>
+            <input type="text" class="form-control" name="subject" value="<?php echo $row['subject']; ?>">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Meddelande</label>
+            <textarea class="form-control" name="message" rows="4"><?php echo $row['message']; ?></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Kategori</label>
+            <input type="text" class="form-control" name="tag" value="<?php echo $row['tag']; ?>">
+        </div>
+    </form>
     <div class="mb-3">
         <label class="form-label">Kontakt</label>
         <input type="text" class="form-control" name="contact" value="<?php echo $row['contact']; ?>">
     </div>
-    
-    <button class="btn btn-primary" type="submit" name="modify">Spara ändringar</button>
-    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-</form>
+
+    <button type="submit" name="modify" class="btn btn-primary">Spara ändringar</button>
+    </form>
 
 </main>
 

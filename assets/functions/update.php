@@ -1,4 +1,7 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Checks whether the update button has been pressed
 if (isset($_POST['modify'])) {
     // Creates a query
@@ -20,8 +23,10 @@ SET subject = :subject,
     // Sends query to database
     try {
         $stmt->execute();
-        header('Location: view.php?action=updated');
+        header('Location: profile.php?action=updated');
+        exit();
+
     } catch (PDOException $e) {
-        echo $e->getMessage();
+        echo "Fel: " . $e->getMessage();
     }
 }

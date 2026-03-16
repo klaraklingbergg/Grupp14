@@ -4,11 +4,8 @@ require_once 'assets/config/db.php';
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
-    exit();}
 //register info to database
-require_once 'assets/functions/insert.php';
+require_once 'assets/functions/insert_posts.php';
 //include header
 require_once 'assets/includes/header.php';
 // show errors for debugging

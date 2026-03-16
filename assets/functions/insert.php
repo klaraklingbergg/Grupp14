@@ -12,7 +12,7 @@ VALUES (:firstname, :lastname, :email, :password, NOW())
     $stmt->bindValue(':firstname', $_POST['firstname']);
     $stmt->bindValue(':lastname', $_POST['lastname']);
     $stmt->bindValue(':email', $_POST['email']);
-    $stmt->bindValue(':password', password_hash($_POST['password'], PASSWORD_DEFAULT));
+    $stmt->bindValue(':password', $_POST['password']);
     // Sends query to database
     if ($stmt->execute()) {
         header('Location: profile.php?action=inserted');

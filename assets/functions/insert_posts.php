@@ -3,8 +3,8 @@
 if (isset($_POST['submit_post'])) {
     // Creates a query
     $sql = '
-INSERT INTO posts (subject, message, tag, contact, user_id)
-VALUES (:subject, :message, :tag, :contact, :user_id)
+INSERT INTO posts (subject, message, tag, contact, user_id, regdate)
+VALUES (:subject, :message, :tag, :contact, :user_id, NOW())
 ';
     // Prepares a query
     $stmt = $dbh->prepare($sql);
@@ -17,7 +17,7 @@ VALUES (:subject, :message, :tag, :contact, :user_id)
 
     // Sends query to database
     if ($stmt->execute()) {
-        header('Location: view.php?action=posted');
+        header('Location: profile.php?action=posted');
         exit();
     }
 }
