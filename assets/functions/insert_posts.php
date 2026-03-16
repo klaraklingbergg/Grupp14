@@ -17,7 +17,7 @@ VALUES (:subject, :message, :tag, :contact, :user_id)
 
     // Sends query to database
     if ($stmt->execute()) {
-        header('Location: ../../view.php?action=posted');
+        header('Location: view.php?action=posted');
         exit();
     }
 }

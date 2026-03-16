@@ -3,7 +3,7 @@
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $sql = "SELECT * FROM users WHERE user_id = :id";
+    $sql = "SELECT * FROM posts WHERE id = :id";
     $stmt = $dbh->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmt->execute();

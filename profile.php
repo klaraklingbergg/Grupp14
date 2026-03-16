@@ -10,7 +10,8 @@ require_once 'assets/includes/header.php';
 ?>
 
 <main>
-    
+    <h1 class="text-center mt-5">Min profil</h1>
+    <p class="text-center">Här kan du se och redigera dina inlägg</p>
 </main>
 
 <?php

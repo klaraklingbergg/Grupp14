@@ -17,7 +17,7 @@ require_once 'assets/functions/select.php';
     <h2 class="mb-4">Flöde</h2>
 
     <?php
-    if (isset($_GET['action'])) {
+    if (isset($_GET['action']))
         switch ($_GET['action']) {
             case 'posted':
                 echo '<div class="alert alert-success">Ditt inlägg har publicerats i flödet!</div>';
@@ -28,20 +28,32 @@ require_once 'assets/functions/select.php';
             case 'updated':
                 echo '<div class="alert alert-success">Inlägget har uppdaterats.</div>';
                 break;
-    }
+        }
 
     // Kolla om det finns några inlägg
     if ($stmt->rowCount() > 0) {
         while ($row = $stmt->fetch()) {
     ?>
             <div>
-<!--Cards med de olika inläggen i flödet-->
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $row['subject']; ?> <span class="badge bg-info text-dark"><?php echo $row['tag']; ?></span></h5>
+                        <p class="card-text"><?php echo nl2br($row['message']); ?></p>
+                        <p class="small text-muted">Kontakt: <?php echo $row['contact']; ?> | Av: <?php echo $row['firstname']; ?></p>
+
+                        <?php if ($_SESSION['user_id'] == $row['user_id']): ?>
+                            <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-outline-secondary">Redigera</a>
+                            <a href="remove.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-outline-danger">Radera</a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <!--Cards med de olika inläggen i flödet-->
 
             </div>
-                     
-                
-            
-    <!--Om det inte finns några inlägg i flödet-->        
+
+
+
+            <!--Om det inte finns några inlägg i flödet-->
     <?php
         }
     } else {

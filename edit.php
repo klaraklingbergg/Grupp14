@@ -22,7 +22,7 @@ require_once 'assets/includes/header.php';
             case 'inserted':
                 echo '
 <div class="alert alert-success">
-Användare registrerad!
+Inlägget har uppdaterats!
 </div>
 ';
                 break;
@@ -30,43 +30,22 @@ Användare registrerad!
     }
     ?>
     <form action="edit.php" method="post">
-        <div class="row mb-3">
-            <label for="firstname" class="col-1 col-form-label">Förnamn</label>
-            <div class="col-4">
-                <input type="text" class="form-control" id="firstname" name="firstname"
-                    value="<?php echo $row['firstname']; ?>">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="lastname" class="col-1 col-form-label">Efternamn</label>
-            <div class="col-4">
-                <input type="text" class="form-control" id="lastname" name="lastname" value="<?php
-                                                                                                echo $row['lastname']; ?>">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="email" class="col-1 col-form-label">E-post</label>
-            <div class="col-4">
-                <input type="email" class="form-control" id="email" name="email" value="<?php
-                                                                                        echo $row['email']; ?>">
-            </div>
-        </div>
-
-        <button class="btn btn-primary d-flex" type="submit" name="modify">
-            <i class="fa-solid fa-pen"></i> Uppdatera information
-        </button>
-        <input type="hidden" name="id" value="<?php echo $row['user_id']; ?>">
-
-    </form>
-
-    <div class="mt-4 pt-3 border-top col-5">
-        <p class="text-muted">
-            Har du redan ett konto?
-            <a href="login.php" class="text-primary fw-bold text-decoration-none">
-                Logga in här.
-            </a>
-        </p>
+    <div class="mb-3">
+        <label class="form-label">Rubrik</label>
+        <input type="text" class="form-control" name="subject" value="<?php echo $row['subject']; ?>">
     </div>
+    <div class="mb-3">
+        <label class="form-label">Meddelande</label>
+        <textarea class="form-control" name="message" rows="4"><?php echo $row['message']; ?></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Kontakt</label>
+        <input type="text" class="form-control" name="contact" value="<?php echo $row['contact']; ?>">
+    </div>
+    
+    <button class="btn btn-primary" type="submit" name="modify">Spara ändringar</button>
+    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+</form>
 
 </main>
 

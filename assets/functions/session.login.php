@@ -15,16 +15,17 @@ if (isset($_POST['login'])) { // Kollar om knappen 'login' är tryckt
     if ($row && password_verify($password, $row['password'])) {
 
         // HÄR SKAPAS KOPPLINGEN (Det viktigaste!)
-        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['firstname'] = $row['firstname'];
+        
 
 
         // Skicka till startsidan
-        header('Location: index.php');
+        header('Location: add.posts.php');
         exit();
     } else {
         // Om det blir fel, skicka tillbaka med ett felmeddelande
-        header('Location: add.posts.php?action=error');
+        header('Location: login.php?action=error');
         exit();
     }
 }
