@@ -11,6 +11,6 @@ SkillSwap är en webbplattform som vi bygger för att studenter ska kunna dela m
 - Databas: MySQL.
 
 ## Arbetsfördelning (övergripande)
-- Klara Klingberg: Databas och backend.
-- Samah Shikha: UI/UX-design och frontend.
-- Alicia Gustafsson: Planering och dokumentation.
+- Klara Klingberg: 
+- Alicia Gustafsson:
+-  Samah Shikha:
