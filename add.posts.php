@@ -4,6 +4,10 @@ require_once 'assets/config/db.php';
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
+    header('Location: index.php');
+    exit();
+}
 //register info to database
 require_once 'assets/functions/insert_posts.php';
 //include header

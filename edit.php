@@ -1,14 +1,23 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Include database connection
 require_once 'assets/config/db.php';
-// Update information to database
-require_once 'assets/functions/update.php';
 // Show errors for debugging
 require_once 'assets/includes/display_errors.php';
+if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
+    header('Location: index.php'); // Skicka till startsidan om man inte är inloggad
+    exit();
+}
+
+// Update information to database
+require_once 'assets/functions/update.php';
 // Get specific information about user
 require_once 'assets/functions/select-id.php';
 // Include header
 require_once 'assets/includes/header.php';
+
 ?>
 
 <!--redigera inlägg-->
@@ -43,13 +52,12 @@ Inlägget har uppdaterats!
             <label class="form-label">Kategori</label>
             <input type="text" class="form-control" name="tag" value="<?php echo $row['tag']; ?>">
         </div>
-    </form>
-    <div class="mb-3">
-        <label class="form-label">Kontakt</label>
-        <input type="text" class="form-control" name="contact" value="<?php echo $row['contact']; ?>">
-    </div>
+        <div class="mb-3">
+            <label class="form-label">Kontakt</label>
+            <input type="text" class="form-control" name="contact" value="<?php echo $row['contact']; ?>">
+        </div>
 
-    <button type="submit" name="modify" class="btn btn-primary">Spara ändringar</button>
+        <button type="submit" name="modify" class="btn btn-primary">Spara ändringar</button>
     </form>
 
 </main>

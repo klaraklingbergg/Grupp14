@@ -62,8 +62,7 @@ require_once 'assets/functions/select.php';
     ?>
 </main>
 
-
 <?php
 //include footer
-require_once 'assets/includes/footer.php';
+require_once 'assets/includes/footer.php'; 
 ?>

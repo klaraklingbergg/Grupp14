@@ -5,6 +5,12 @@ require_once 'assets/config/db.php';
 require_once 'assets/functions/delete.php';
 // Show errors for debugging
 require_once 'assets/includes/display_errors.php';
+
+// Kontrollera om session id finns 
+if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
+    header('Location: index.php?action=error'); // Skicka till start med felmeddelande 
+    exit();
+}
 // Get specific information about user
 require_once 'assets/functions/select-id.php';
 // Include header

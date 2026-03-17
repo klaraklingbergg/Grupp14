@@ -18,17 +18,16 @@ $sql = "SELECT * FROM posts WHERE user_id = :user_id ORDER BY regdate DESC";
 $stmt = $dbh->prepare($sql);
 $stmt->bindValue(':user_id', $_SESSION['user_id']);
 $stmt->execute();
-
-require_once 'assets/includes/header.php';
 ?>
 
 <main>
     <div class="text-center mb-5">
         <h1>Välkommen, <?php echo $_SESSION['firstname']; ?>!</h1>
-        <p class="lead">Dina frågor:</p>
         <a href="add.posts.php" class="btn btn-warning">
             <i class="fa-solid fa-plus"></i> Ställ en ny fråga
         </a>
+        <p class="lead">Dina frågor:</p>
+        
     </div>
 
     <div class="row justify-content-center">
@@ -66,7 +65,6 @@ require_once 'assets/includes/header.php';
             ?>
         </div>
     </div>
-</main>
 </main>
 
 <?php
