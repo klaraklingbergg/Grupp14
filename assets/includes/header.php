@@ -48,12 +48,12 @@ require_once 'assets/functions/session.login.php';
                     <i class="fa-solid fa-circle-user fs-3"></i>
                 </a>
                 <a href="logout.php" class="btn btn-outline-danger btn-sm">
-                    <i class="fa-solid fa-right-from-bracket"></i> Logga ut
+                    <i class="fa-solid fa-right-from-bracket"></i> <u>Logga ut</u>
                 </a>
 
             <?php else: ?>
                 <a href="login.php" class="text-dark d-flex align-items-center text-decoration-none">
-                    <span class="me-2">Logga in / Reg</span>
+                    <span class="me-2"><u>Logga in / Reg</u></span>
                     <i class="fa-solid fa-circle-user fs-2"></i>
                 </a>
             <?php endif; ?>

@@ -15,25 +15,16 @@ require_once 'assets/functions/select.php';
 
 <main class="container mt-5">
     <h2 class="mb-4">Flöde</h2>
-
     <?php
-    if (isset($_GET['action']))
-        switch ($_GET['action']) {
-            case 'posted':
-                echo '<div class="alert alert-success">Ditt inlägg har publicerats i flödet!</div>';
-                break;
-            case 'deleted':
-                echo '<div class="alert alert-danger">Inlägget har raderats.</div>';
-                break;
-            case 'updated':
-                echo '<div class="alert alert-success">Inlägget har uppdaterats.</div>';
-                break;
-        }
 
     // Kolla om det finns några inlägg
     if ($stmt->rowCount() > 0) {
         while ($row = $stmt->fetch()) {
     ?>
+
+
+
+            <!-- EXEMPEL PÅ INLÄGG I FLÖDET -->
             <div>
                 <div class="card mb-3 shadow-sm">
                     <div class="card-body">
@@ -54,6 +45,8 @@ require_once 'assets/functions/select.php';
 
 
             <!--Om det inte finns några inlägg i flödet-->
+
+
     <?php
         }
     } else {
@@ -64,5 +57,5 @@ require_once 'assets/functions/select.php';
 
 <?php
 //include footer
-require_once 'assets/includes/footer.php'; 
+require_once 'assets/includes/footer.php';
 ?>

@@ -10,7 +10,7 @@ if (isset($_POST['delete'])) {
     $stmt->bindValue(':my_id', $_SESSION['user_id'], PDO::PARAM_INT);
     // Sends query to database
     if ($stmt->execute()) {
-        header('Location: view.php?action=deleted');
+        header('Location: profile.php?action=deleted');
         exit();
     }
 }

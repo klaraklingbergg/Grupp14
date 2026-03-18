@@ -1,4 +1,7 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Include database connection
 require_once 'assets/config/db.php';
 // Delete information from database
@@ -21,7 +24,7 @@ require_once 'assets/includes/header.php';
 <main class="container mt-5">
     <form action="remove.php" method="post">
         <div class="row">
-            <p>Är du säker på att du vill radera inlägget?</p>
+            <h2><?php echo $_SESSION['firstname']; ?>, Är du säker på att du vill radera inlägget?</h2>
         </div>
 
         <button class="btn btn-danger" type="submit" name="delete">
