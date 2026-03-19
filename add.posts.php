@@ -7,15 +7,9 @@ require_once 'assets/includes/display_errors.php';
 require_once 'assets/config/db.php';
 //register info to database
 require_once 'assets/functions/insert_posts.php';
-
 ?>
 
-<!--Skapa inlägg-->
-<!--skickas till flöde-->
-
-
-
-<main class="container mt-5">
+<main class="container mt-5 mb-5">
     <?php
     // Checks if an action is set
     if (isset($_GET['action'])) {
@@ -23,48 +17,53 @@ require_once 'assets/functions/insert_posts.php';
         switch ($_GET['action']) {
             case 'posted':
                 echo '
-<div class="alert alert-success">
-Inlägg skapat!
-</div>
-';
+                <div class="alert alert-success text-center shadow-sm" style="border-radius: 15px;">
+                    Inlägg skapat!
+                </div>
+                ';
                 break;
         }
     }
     ?>
-    <form action="add.posts.php" method="post">
-        <div class="row mb-3">
-            <label for="subject" class="col-1 col-form-label">Rubrik</label>
-            <div class="col-4">
-                <input type="text" class="form-control" id="subject" name="subject">
+    
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm" style="border: 1px solid #e3f2fd; border-radius: 15px;">
+                <div class="card-body p-4 p-md-5">
+                    <h3 class="card-title text-center mb-4" style="color: #0b5394;">Skapa nytt inlägg</h3>
+                    
+                    <form action="add.posts.php" method="post">
+                        <div class="mb-3">
+                            <label for="subject" class="form-label fw-bold">Rubrik</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label fw-bold">Vad behöver du hjälp med?</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="tag" class="form-label fw-bold">Kategori</label>
+                            <input type="text" class="form-control" id="tag" name="tag" placeholder="#design, #programmering...">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="contact" class="form-label fw-bold">Kontakt</label>
+                            <input type="text" class="form-control" id="contact" name="contact" placeholder="Mail, telefon eller liknande" required>
+                        </div>
+                        
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-success btn-lg" name="submit_post">
+                                <i class="fa-solid fa-paper-plane me-2"></i> Publicera inlägg
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="row mb-3">
-            <label for="message" class="col-1 col-form-label">Vad behöver du hjälp med?</label>
-            <div class="col-4">
-                <textarea class="form-control" id="message" name="message" rows="4"></textarea>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="tag" class="col-1 col-form-label">Kategori</label>
-            <div class="col-4">
-                <input type="text" class="form-control" id="tag" name="tag" placeholder="#">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="contact" class="col-1 col-form-label">Kontakt</label>
-            <div class="col-4">
-                <input type="text" class="form-control" id="contact" name="contact" placeholder="Mail, telefon eller liknande">
-            </div>
-        </div>
-        </div>
-        <button type="submit" class="btn btn-success" name="submit_post">
-            <i class="fa-solid fa-paper-plane"></i>
-            Publicera inlägg
-        </button>
-    </form>
-
+    </div>
 </main>
-
 
 <?php
 //include footer
