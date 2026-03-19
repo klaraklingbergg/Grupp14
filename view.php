@@ -32,7 +32,7 @@ require_once 'assets/functions/select.php';
                         <p class="card-text"><?php echo nl2br($row['message']); ?></p>
                         <p class="small text-muted">Kontakt: <?php echo $row['contact']; ?> | Av: <?php echo $row['firstname']; ?></p>
 
-                        <?php if ($_SESSION['user_id'] == $row['user_id']): ?>
+                        <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $row['user_id']): ?>
                             <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-outline-secondary">Redigera</a>
                             <a href="remove.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-outline-danger">Radera</a>
                         <?php endif; ?>
