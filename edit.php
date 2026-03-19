@@ -1,14 +1,23 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Include database connection
 require_once 'assets/config/db.php';
-// Update information to database
-require_once 'assets/functions/update.php';
 // Show errors for debugging
 require_once 'assets/includes/display_errors.php';
+if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
+    header('Location: index.php'); // Skicka till startsidan om man inte är inloggad
+    exit();
+}
+
+// Update information to database
+require_once 'assets/functions/update.php';
 // Get specific information about user
 require_once 'assets/functions/select-id.php';
 // Include header
 require_once 'assets/includes/header.php';
+
 ?>
 
 <!--redigera inlägg-->
@@ -22,7 +31,7 @@ require_once 'assets/includes/header.php';
             case 'inserted':
                 echo '
 <div class="alert alert-success">
-Användare registrerad!
+Inlägget har uppdaterats!
 </div>
 ';
                 break;
@@ -30,43 +39,26 @@ Användare registrerad!
     }
     ?>
     <form action="edit.php" method="post">
-        <div class="row mb-3">
-            <label for="firstname" class="col-1 col-form-label">Förnamn</label>
-            <div class="col-4">
-                <input type="text" class="form-control" id="firstname" name="firstname"
-                    value="<?php echo $row['firstname']; ?>">
-            </div>
+        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+        <div class="mb-3">
+            <label class="form-label">Rubrik</label>
+            <input type="text" class="form-control" name="subject" value="<?php echo $row['subject']; ?>">
         </div>
-        <div class="row mb-3">
-            <label for="lastname" class="col-1 col-form-label">Efternamn</label>
-            <div class="col-4">
-                <input type="text" class="form-control" id="lastname" name="lastname" value="<?php
-                                                                                                echo $row['lastname']; ?>">
-            </div>
+        <div class="mb-3">
+            <label class="form-label">Meddelande</label>
+            <textarea class="form-control" name="message" rows="4"><?php echo $row['message']; ?></textarea>
         </div>
-        <div class="row mb-3">
-            <label for="email" class="col-1 col-form-label">E-post</label>
-            <div class="col-4">
-                <input type="email" class="form-control" id="email" name="email" value="<?php
-                                                                                        echo $row['email']; ?>">
-            </div>
+        <div class="mb-3">
+            <label class="form-label">Kategori</label>
+            <input type="text" class="form-control" name="tag" value="<?php echo $row['tag']; ?>">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Kontakt</label>
+            <input type="text" class="form-control" name="contact" value="<?php echo $row['contact']; ?>">
         </div>
 
-        <button class="btn btn-primary d-flex" type="submit" name="modify">
-            <i class="fa-solid fa-pen"></i> Uppdatera information
-        </button>
-        <input type="hidden" name="id" value="<?php echo $row['user_id']; ?>">
-
+        <button type="submit" name="modify" class="btn btn-primary">Spara ändringar</button>
     </form>
-
-    <div class="mt-4 pt-3 border-top col-5">
-        <p class="text-muted">
-            Har du redan ett konto?
-            <a href="login.php" class="text-primary fw-bold text-decoration-none">
-                Logga in här.
-            </a>
-        </p>
-    </div>
 
 </main>
 

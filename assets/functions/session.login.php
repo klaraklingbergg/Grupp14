@@ -1,4 +1,5 @@
 <?php
+//  Starta sessionen först av allt
 if (isset($_POST['login'])) { // Kollar om knappen 'login' är tryckt
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -11,20 +12,21 @@ if (isset($_POST['login'])) { // Kollar om knappen 'login' är tryckt
 
     $row = $stmt->fetch();
 
-    // 3. Kontrollera om användaren finns OCH om lösenordet stämmer
-    if ($row && password_verify($password, $row['password'])) {
+    // Kontrollera om användaren finns OCH om lösenordet stämmer
+    if ($row && $password == $row['password']) {
 
         // HÄR SKAPAS KOPPLINGEN (Det viktigaste!)
-        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['firstname'] = $row['firstname'];
 
 
-        // Skicka till startsidan
-        header('Location: index.php');
+
+        // Skicka till flödet
+        header('Location: view.php');
         exit();
     } else {
         // Om det blir fel, skicka tillbaka med ett felmeddelande
-        header('Location: add.posts.php?action=error');
+        header('Location: login.php?action=error');
         exit();
     }
 }
