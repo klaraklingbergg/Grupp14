@@ -24,29 +24,33 @@ require_once 'assets/includes/header.php';
 </head>
 
 <body>
-
+<!--Taggar, header osv-->
     <main>
     <h1>Skillswap</h1>
         <p>En plattform där studenter kan dela sina kunskaper med varandra</p>
     <h2>Hur fungerar det?</h2>
         <p>Skapa en profil, skapa ett inlägg, hjälp andra</p>
     <h2>Taggar</h2>
-    <ul>
+<!--försök till taggar kopplat till tag.php-->
+    <ul class="list-unstyled d-flex gap-2 flex-wrap">
         <li>
-            <a href="#" class= "badge bg-primary">#Programmering</a>
+            <a href="tag.php?programmering" class= "badge bg-primary">#Programmering</a>
         </li>
 
         <li>
-            <a href="#" class= "badge bg-primary">#Matematik</a>
+            <a href="tag.php?matematik" class= "badge bg-primary">#Matematik</a>
 
         </li>
 
         <li>
-            <a href="#" class= "badge bg-primary">#Design</a>
+            <a href="tag.php?design" class= "badge bg-primary">#Design</a>
         </li>
 
         <li>
-        <a href="#" class= "badge bg-primary">#UX</a>
+            <a href="tag.php?ux" class= "badge bg-primary">#UX</a>
+        </li>
+        <li>
+            <a href="tag.php?svenska" class= "badge bg-primary">#Svenska</a>
         </li>
     </ul>
     </main>
