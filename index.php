@@ -65,7 +65,7 @@ Du har lyckats logga ut! :-)
             </div>
             <!--LÄGGA IN BILD HÄR-->
             <div class="mb-4">
-                <img src="assets/images/" alt="Skillswap" class="img-fluid">
+                <img src="assets/images/" alt="Skillswap">
             </div>
             <div class="mb-4">
                 <h2>Hur fungerar det?</h2>
