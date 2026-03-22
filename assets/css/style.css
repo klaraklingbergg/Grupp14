@@ -5,6 +5,10 @@ använda Bootstraps inbyggda klasser */
 /*EBDEBB- ljus gul, header och footer*/
 /*BED4DD- ljus blå, bakgrundsfärg*/
 
+.background {
+    background-color: #BED4DD;
+}
+
 /*Gör så att hela sidan täcker hela skärmens höjd */
 html, body {
     height: 100%;
@@ -33,7 +37,7 @@ h1, h2, h3 {
     background-color:#ffffff;
 }
 
-/* Om du vill ha en mjukare känsla på dina knappar */
+/* Mjukare känsla på dina knappar */
 .btn {
     border-radius: 8px;
     padding: 10px 20px;

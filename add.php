@@ -51,7 +51,7 @@ Användare registrerad!
                 <input type="password" class="form-control" id="password" name="password">
             </div>
 
-            <button type="submit" class="btn btn-success w-100" name="register">
+            <button type="submit" class="btn btn-primary w-100" name="register">
                 <i class="fa-solid fa-user-check"></i>
                 Registrera
             </button>

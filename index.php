@@ -54,35 +54,47 @@ Du har lyckats logga ut! :-)
 </head>
 
 <body>
-<!--Taggar, header osv-->
-    <main>
-    <h1>Skillswap</h1>
-        <p>En plattform där studenter kan dela sina kunskaper med varandra</p>
-    <h2>Hur fungerar det?</h2>
-        <p>Skapa en profil, skapa ett inlägg, hjälp andra</p>
-    <h2>Taggar</h2>
-<!--försök till taggar kopplat till tag.php-->
-    <ul class="list-unstyled d-flex gap-2 flex-wrap">
-        <li>
-            <a href="tag.php?programmering" class= "badge bg-primary">#Programmering</a>
-        </li>
+    <!--Taggar, header osv-->
+    <main class="background vh-100 d-flex align-items-center text-white">
+        <div class="container text-center">
+            <h1 class="display-1 fw-bold mb-4 mt-5">Skillswap</h1>
+            <p class="lead fs-4 mb-4">En plattform där studenter kan dela sina kunskaper med varandra</p>
+            <div class="mb-4 text-center">
+                <a href="add.php" class="btn btn-primary btn-lg me-2">Skapa konto</a>
+                <a href="login.php" class="btn btn-success btn-lg">Logga in</a>
+            </div>
+            <!--LÄGGA IN BILD HÄR-->
+            <div class="mb-4">
+                <img src="assets/images/" alt="Skillswap" class="img-fluid">
+            </div>
+            <div class="mb-4">
+                <h2>Hur fungerar det?</h2>
+                <p>Skapa en profil, skapa ett inlägg, hjälp andra</p>
+            </div>
+            <h2>Taggar</h2>
+            <!--försök till taggar kopplat till tag.php-->
+            <ul class="list-unstyled d-flex gap-2 flex-wrap">
+                <li>
+                    <a href="tag.php?programmering" class="badge bg-primary">#Programmering</a>
+                </li>
 
-        <li>
-            <a href="tag.php?matematik" class= "badge bg-primary">#Matematik</a>
+                <li>
+                    <a href="tag.php?matematik" class="badge bg-primary">#Matematik</a>
 
-        </li>
+                </li>
 
-        <li>
-            <a href="tag.php?design" class= "badge bg-primary">#Design</a>
-        </li>
+                <li>
+                    <a href="tag.php?design" class="badge bg-primary">#Design</a>
+                </li>
 
-        <li>
-            <a href="tag.php?ux" class= "badge bg-primary">#UX</a>
-        </li>
-        <li>
-            <a href="tag.php?svenska" class= "badge bg-primary">#Svenska</a>
-        </li>
-    </ul>
+                <li>
+                    <a href="tag.php?ux" class="badge bg-primary">#UX</a>
+                </li>
+                <li>
+                    <a href="tag.php?svenska" class="badge bg-primary">#Svenska</a>
+                </li>
+            </ul>
+        </div>
     </main>
 
 
