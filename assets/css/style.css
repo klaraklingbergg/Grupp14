@@ -2,6 +2,9 @@
 /*Försök använda så lite egen CSS som möjligt, och istället 
 använda Bootstraps inbyggda klasser */
 
+/*EBDEBB- ljus gul, header och footer*/
+/*BED4DD- ljus blå, bakgrundsfärg*/
+
 /*Gör så att hela sidan täcker hela skärmens höjd */
 html, body {
     height: 100%;
@@ -27,11 +30,11 @@ h1, h2, h3 {
 /* Gör att tabeller inte ser så trånga ut */
 .table {
     margin-top: 20px;
-    background-color: #fff;
+    background-color:#ffffff;
 }
 
 /* Om du vill ha en mjukare känsla på dina knappar */
 .btn {
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 10px 20px;
 }
