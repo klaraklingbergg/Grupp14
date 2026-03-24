@@ -60,7 +60,7 @@ Du har lyckats logga ut! :-)
         <div class="container text-center">
             <h1 class="display-1 fw-bold mb-4 mt-5">Skillswap</h1>
             <p class="lead fs-4 mb-4">En plattform där studenter kan dela sina kunskaper med varandra</p>
-           
+
             <div class="mb-4">
                 <img src="assets/images/skillswap.webp" alt="Skillswap" style="max-width: 500px;">
             </div>
@@ -69,11 +69,17 @@ Du har lyckats logga ut! :-)
                 <h2>Hur fungerar det?</h2>
                 <p>Skapa en profil, skapa ett inlägg, hjälp andra</p>
             </div>
-            
-            <div class="mb-4 ">
-                <a href="add.php" class="btn btn-primary btn-lg me-2">Skapa konto</a>
-                <a href="login.php" class="btn btn-success btn-lg">Logga in</a>
-            </div>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <div class="mb-4 ">
+                    <a href="view.php" class="btn btn-primary btn-lg me-2">Gå till flöde</a>
+                    <a href="add.posts.php" class="btn btn-success btn-lg">Skapa inlägg</a>
+                </div>
+            <?php else: ?>
+             <div class="mb-4 ">
+                    <a href="add.php" class="btn btn-primary btn-lg me-2">Skapa konto</a>
+                    <a href="login.php" class="btn btn-success btn-lg">Logga in</a>
+                </div>   
+            <?php endif; ?>
         </div>
     </main>
 
