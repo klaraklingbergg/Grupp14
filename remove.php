@@ -20,23 +20,22 @@ require_once 'assets/functions/select-id.php';
 require_once 'assets/includes/header.php';
 ?>
 
-<!--Ta bort sitt inlägg-->
 <main class="container mt-5">
-    <form action="remove.php" method="post">
-        <div class="row">
-            <h2><?php echo $_SESSION['firstname']; ?>, Är du säker på att du vill radera inlägget?</h2>
+    <div class="col-md-5 mx-auto">
+        <div class="card shadow-sm">
+            <div class="card-body p-4 text-center">
+                <form action="remove.php" method="post">
+                    <h3 class="mb-4"><?php echo $_SESSION['firstname']; ?>, Är du säker på att du vill radera inlägget?</h3>
+                    
+                    <button class="btn btn-danger w-100" type="submit" name="delete">
+                        <i class="fa-solid fa-trash-can"></i> Radera
+                    </button>
+                    <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+                </form>
+            </div>
         </div>
-
-        <button class="btn btn-danger" type="submit" name="delete">
-            <i class="fa-solid fa-trash-can"></i> Radera
-        </button>
-        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
-    </form>
-
-
-
+    </div>
 </main>
-
 
 <?php
 //include footer

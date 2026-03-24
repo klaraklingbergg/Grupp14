@@ -4,6 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require_once 'assets/config/db.php';
 require_once 'assets/includes/display_errors.php';
+
 // Checks whether submit button has been set
 if (isset($_POST['login'])) {
     // Checks whether e-mail or password are empty
@@ -48,32 +49,31 @@ AND password = :password
 }
 require_once 'assets/includes/header.php';
 ?>
-<!--Fuktion för inloggning, hämtar data från formuläret och jämför med databas,
- skapar session med user id vid lyckad inloggning-->
-
-<!-- Logga in -->
-
 <main class="container mt-5">
     <div class="col-md-5 mx-auto">
-        <h2 class="mb-4">Logga in</h2>
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="mb-4 text-center">Logga in</h2>
 
-        <form action="login.php" method="post">
-            <div class="mb-3">
-                <label class="form-label">E-post</label>
-                <input type="email" class="form-control" name="email" required>
+                <form action="login.php" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">E-post</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Lösenord</label>
+                        <input type="password" class="form-control" name="password" required>
+                    </div>
+                    <button type="submit" name="login" class="btn btn-success w-100">Logga in</button>
+                </form>
+
+                <?php if (isset($_GET['action']) && $_GET['action'] == 'error'): ?>
+                    <div class="alert alert-danger mt-3 text-center">Fel e-post eller lösenord!</div>
+                <?php endif; ?>
+
+                <p class="mt-4 mb-0 text-center">Ny här? <a href="add.php" class="text-decoration-none">Skapa ett konto</a></p>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Lösenord</label>
-                <input type="password" class="form-control" name="password" required>
-            </div>
-            <button type="submit" name="login" class="btn btn-success w-100">Logga in</button>
-        </form>
-
-        <?php if (isset($_GET['action']) && $_GET['action'] == 'error'): ?>
-            <div class="alert alert-danger mt-3">Fel e-post eller lösenord!</div>
-        <?php endif; ?>
-
-        <p class="mt-3 text-center">Ny här? <a href="add.php">Skapa ett konto</a></p>
+        </div>
     </div>
 </main>
 
