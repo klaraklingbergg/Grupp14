@@ -38,3 +38,27 @@ h1, h2, h3 {
     border-radius: 8px;
     padding: 10px 20px;
 }
+/* Dropdown för taggarna*/
+.dropbtn {
+    background-color: #e0e1d3;
+    color:#ffffff;
+    padding:10px;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #BED4DD;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+.dropdown-content.show {
+    display: block;
+}

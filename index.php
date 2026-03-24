@@ -61,28 +61,35 @@ Du har lyckats logga ut! :-)
     <h2>Hur fungerar det?</h2>
         <p>Skapa en profil, skapa ett inlägg, hjälp andra</p>
     <h2>Taggar</h2>
+
+    <div class="dropdown">
+        <button class="dropbtn">Välj kurs </button>
+        <div class="dropdown-content">
 <!--försök till taggar kopplat till tag.php-->
-    <ul class="list-unstyled d-flex gap-2 flex-wrap">
+     <ul class="list-unstyled">
         <li>
-            <a href="tag.php?programmering" class= "badge bg-primary">#Programmering</a>
+            <a href="tag.php?tag=programmering" class= "badge bg-primary">#Programmering</a>
         </li>
 
         <li>
-            <a href="tag.php?matematik" class= "badge bg-primary">#Matematik</a>
+            <a href="tag.php?tag=matematik" class= "badge bg-primary">#Matematik</a>
 
         </li>
 
         <li>
-            <a href="tag.php?design" class= "badge bg-primary">#Design</a>
+            <a href="tag.php?tag=design" class= "badge bg-primary">#Design</a>
         </li>
 
         <li>
-            <a href="tag.php?ux" class= "badge bg-primary">#UX</a>
+            <a href="tag.php?tag=ux" class= "badge bg-primary">#UX</a>
         </li>
         <li>
-            <a href="tag.php?svenska" class= "badge bg-primary">#Svenska</a>
+            <a href="tag.php?tag=svenska" class= "badge bg-primary">#Svenska</a>
         </li>
     </ul>
+        </div>
+        </div>
+
     </main>
 
 
