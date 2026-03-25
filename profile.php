@@ -38,12 +38,12 @@ $stmt->execute();
                     break;
             }
         ?>
-        <div class="text-center mb-5">
+        <div class="text-center mb-5 mt-5">
             <h1>Välkommen, <?php echo $_SESSION['firstname']; ?>!</h1>
-            <a href="add.posts.php" class="btn btn-warning">
+            <a href="add.posts.php" class="btn btn-warning" style="border-radius: 15px;">
                 <i class="fa-solid fa-plus"></i> Ställ en ny fråga
             </a>
-            <p class="lead">Dina frågor:</p>
+
 
         </div>
 
@@ -61,7 +61,7 @@ $stmt->execute();
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-title"><?php echo $row['subject']; ?></h5>
-                                    <span class="badge bg-info text-dark"><?php echo $row['tag']; ?></span>
+                                    <span class="badge bg-warning text-dark"><?php echo $row['tag']; ?></span>
                                 </div>
                                 <p class="card-text"><?php echo nl2br($row['message']); ?></p>
                                 <div class="d-flex justify-content-between align-items-center mt-3">

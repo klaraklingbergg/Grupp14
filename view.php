@@ -23,12 +23,11 @@ require_once 'assets/functions/select.php';
     ?>
 
 
-
             <!-- EXEMPEL PÅ INLÄGG I FLÖDET -->
             <div>
                 <div class="card mb-3 shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['subject']; ?> <span class="badge bg-info text-dark"><?php echo $row['tag']; ?></span></h5>
+                        <h5 class="card-title"><?php echo $row['subject']; ?> <span class="badge bg-warning text-dark"><?php echo $row['tag']; ?></span></h5>
                         <p class="card-text"><?php echo nl2br($row['message']); ?></p>
                         <p class="small text-muted">Kontakt: <?php echo $row['contact']; ?> | Av: <?php echo $row['firstname']; ?></p>
 
@@ -41,8 +40,6 @@ require_once 'assets/functions/select.php';
                 <!--Cards med de olika inläggen i flödet-->
 
             </div>
-
-
 
             <!--Om det inte finns några inlägg i flödet-->
 
