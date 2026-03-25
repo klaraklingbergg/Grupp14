@@ -1,6 +1,6 @@
 <?php
 //försök till att koppla taggarna till inläggen
-require_once '<assets/includes/header.php';
+require_once 'assets/includes/header.php';
 require_once 'assets/config/db.php';
 $tag =$_GET['tag'] ?? null;
 ?>
