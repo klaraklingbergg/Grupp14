@@ -55,60 +55,41 @@ Du har lyckats logga ut! :-)
 
 <body>
     <!--Taggar, header osv-->
-    <main class="background vh-100 d-flex align-items-center text-white">
+    <main class="background d-flex flex-column text-white">
+
         <div class="container text-center">
             <h1 class="display-1 fw-bold mb-4 mt-5">Skillswap</h1>
             <p class="lead fs-4 mb-4">En plattform där studenter kan dela sina kunskaper med varandra</p>
-            <div class="mb-4 text-center">
-                <a href="add.php" class="btn btn-primary btn-lg me-2">Skapa konto</a>
-                <a href="login.php" class="btn btn-success btn-lg">Logga in</a>
-            </div>
-            <!--LÄGGA IN BILD HÄR-->
+
             <div class="mb-4">
-                <img src="assets/images/" alt="Skillswap">
+                <img src="assets/images/skillswap.webp" alt="Skillswap" style="max-width: 500px;">
             </div>
+
             <div class="mb-4">
                 <h2>Hur fungerar det?</h2>
                 <p>Skapa en profil, skapa ett inlägg, hjälp andra</p>
             </div>
-            <h2>Taggar</h2>
-            
-    <div class="dropdown">
-        <button class="dropbtn">Välj kurs </button>
-        <div class="dropdown-content">
-<!--försök till taggar kopplat till tag.php-->
-             <ul class="list-unstyled">
-                <li>
-                    <a href="tag.php?tag=programmering" class="badge bg-primary">#Programmering</a>
-                </li>
-
-                <li>
-                    <a href="tag.php?tag=matematik" class="badge bg-primary">#Matematik</a>
-
-                </li>
-
-                <li>
-                    <a href="tag.php?tag=design" class="badge bg-primary">#Design</a>
-                </li>
-
-                <li>
-                    <a href="tag.php?tag=ux" class="badge bg-primary">#UX</a>
-                </li>
-                <li>
-                    <a href="tag.php?tag=svenska" class="badge bg-primary">#Svenska</a>
-                </li>
-            </ul>
-    
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <div class="mb-4 ">
+                    <a href="view.php" class="btn btn-primary btn-lg me-2">Gå till flöde</a>
+                    <a href="add.posts.php" class="btn btn-success btn-lg">Skapa inlägg</a>
+                </div>
+            <?php else: ?>
+             <div class="mb-4 ">
+                    <a href="add.php" class="btn btn-primary btn-lg me-2">Skapa konto</a>
+                    <a href="login.php" class="btn btn-success btn-lg">Logga in</a>
+                </div>   
+            <?php endif; ?>
         </div>
      </div>
 
     </main>
 
-
+    <?php
+    //include footer
+    require_once 'assets/includes/footer.php';
+    ?>
 </body>
-<?php
-//include footer
-require_once 'assets/includes/footer.php';
-?>
+
 
 </html>
