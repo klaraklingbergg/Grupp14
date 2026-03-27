@@ -79,4 +79,4 @@ require_once 'assets/functions/insert_posts.php';
 <?php
 //include footer
 require_once 'assets/includes/footer.php';
-?>
+?> 
