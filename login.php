@@ -77,4 +77,6 @@ require_once 'assets/includes/header.php';
     </div>
 </main>
 
-<?php require_once 'assets/includes/footer.php'; ?>
+<?php require_once 'assets/includes/footer.php'; ?>  
+
+
