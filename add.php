@@ -68,5 +68,5 @@ require_once 'assets/includes/header.php';
 
 <?php
 //include footer
-require_once 'assets/includes/footer.php';
+require_once 'assets/includes/footer.php';   
 ?>
