@@ -1,4 +1,5 @@
 <?php
+// Sektion för att hantera radering. Tydliga knappar för att undvika misstag
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
