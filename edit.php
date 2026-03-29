@@ -20,7 +20,7 @@ require_once 'assets/includes/header.php';
 
 ?>
 
-<!--redigera inlägg-->
+<!-- Form to edit a post. -->
 
 <main class="container mt-5">
     <?php

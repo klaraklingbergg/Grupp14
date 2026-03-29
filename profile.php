@@ -52,9 +52,9 @@ $stmt->execute();
                 <h3 class="mb-4 border-bottom pb-2">Mina inlägg</h3>
 
                 <?php
-                // KONTROLLERA OM DU HAR NÅGRA INLÄGG
+                // Checks if the user has any posts
                 if ($stmt->rowCount() > 0) {
-                    // LOOPA IGENOM OCH VISA VARJE INLÄGG
+                    // Loops through the user's posts and displays them
                     while ($row = $stmt->fetch()) {
                 ?>
                         <div class="card mb-3 shadow-sm">
@@ -76,7 +76,7 @@ $stmt->execute();
                 <?php
                     }
                 } else {
-                    // Om användaren inte har skapat några inlägg än
+                    // If the user has no posts, display a message
                     echo '<div class="alert alert-info text-center">Du har inte skapat några inlägg än.</div>';
                 }
                 ?>

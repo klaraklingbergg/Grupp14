@@ -36,7 +36,7 @@ require_once 'assets/functions/insert_posts.php';
         }
     }
     ?>
-    
+    // Form to add a new post
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <div class="card shadow-sm" style="border: 1px solid #e3f2fd; border-radius: 15px;">

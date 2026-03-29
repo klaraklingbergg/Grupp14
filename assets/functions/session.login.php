@@ -1,10 +1,10 @@
 <?php
-//  Starta sessionen först av allt
-if (isset($_POST['login'])) { // Kollar om knappen 'login' är tryckt
+//  Checks whether the login button has been pressed
+if (isset($_POST['login'])) { 
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Skapar en SQL-fråga för att hämta användaren baserat på e-post
+    // Creates a query to fetch the user based on email
     $sql = 'SELECT * FROM users WHERE email = :email';
     $stmt = $dbh->prepare($sql);
     $stmt->bindValue(':email', $email);
@@ -12,20 +12,20 @@ if (isset($_POST['login'])) { // Kollar om knappen 'login' är tryckt
 
     $row = $stmt->fetch();
 
-    // Kontrollera om användaren finns OCH om lösenordet stämmer
+    // Checks if a user was found and if the password matches
     if ($row && $password == $row['password']) {
 
-        // HÄR SKAPAS KOPPLINGEN (Det viktigaste!)
+        // Connection successful, start a session and save user information
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['firstname'] = $row['firstname'];
 
 
 
-        // Skicka till flödet
+        // Send the user to the view page
         header('Location: view.php');
         exit();
     } else {
-        // Om det blir fel, skicka tillbaka med ett felmeddelande
+        // If login fails, redirect back to the login page with an error message
         header('Location: login.php?action=error');
         exit();
     }

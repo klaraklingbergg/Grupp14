@@ -10,20 +10,16 @@ require_once 'assets/functions/select.php';
 
 ?>
 
-<!-- Flöde -->
-<!--LISTA AV ALLA inlägg-->
+<!-- View all posts -->
 
 <main class="container mt-5">
     <h2 class="mb-4">Flöde</h2>
     <?php
 
-    // Kolla om det finns några inlägg
+    // Checks if there are any posts in the database and displays them. If there are no posts, it shows a message. 
     if ($stmt->rowCount() > 0) {
         while ($row = $stmt->fetch()) {
     ?>
-
-
-            <!-- EXEMPEL PÅ INLÄGG I FLÖDET -->
             <div>
                 <div class="card mb-3 shadow-sm">
                     <div class="card-body">
@@ -37,14 +33,12 @@ require_once 'assets/functions/select.php';
                         <?php endif; ?>
                     </div>
                 </div>
-                <!--Cards med de olika inläggen i flödet-->
+                <!--Cards with the different posts in the feed-->
 
             </div>
 
-            <!--Om det inte finns några inlägg i flödet-->
-
-
     <?php
+    //If there are no posts, it shows a message.
         }
     } else {
         echo '<div class="alert alert-info">Det finns inga frågor i flödet ännu. Bli den första att fråga!</div>';

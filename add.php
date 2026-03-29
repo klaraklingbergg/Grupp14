@@ -1,5 +1,5 @@
 <?php
-// Formulär för att lägga till inlägg. Tydlig visuell hierarki och UX
+//Form to add user. Clear visual hierarchy and UX 
 // include database connection
 require_once 'assets/config/db.php';
 // show errors for debugging

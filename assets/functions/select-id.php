@@ -1,5 +1,5 @@
 <?php
-// Kontrollera att ID finns i länken
+// Checks whether an id exists in the URL
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
@@ -8,6 +8,6 @@ if (isset($_GET['id'])) {
     $stmt->bindValue(':id', $id);
     $stmt->execute();
 
-    // HÄR SKAPAS $row
+    // Fetches results and creates the variable $row
     $row = $stmt->fetch();
 }

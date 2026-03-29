@@ -1,5 +1,5 @@
 <?php
-// Sektion för att hantera radering. Tydliga knappar för att undvika misstag
+// Section to remove a post. Asks for confirmation before deleting the post from the database.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -10,9 +10,9 @@ require_once 'assets/functions/delete.php';
 // Show errors for debugging
 require_once 'assets/includes/display_errors.php';
 
-// Kontrollera om session id finns 
+// Confirm that the user is logged in before allowing them to delete a post
 if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
-    header('Location: index.php?action=error'); // Skicka till start med felmeddelande 
+    header('Location: index.php?action=error'); // Send to index with error message if not logged in
     exit();
 }
 // Get specific information about user

@@ -1,4 +1,5 @@
 <?php
+// Checks if a session has already been started, if not, start a new session
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

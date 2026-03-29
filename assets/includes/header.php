@@ -4,7 +4,6 @@ require_once 'assets/includes/display_errors.php';
 // Opens database connection
 require_once 'assets/config/db.php';
 // Init session management
-
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

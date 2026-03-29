@@ -34,10 +34,8 @@ Du har lyckats logga ut! :-)
     }
 }
 ?>
-<!--Felmeddelande vid inloggning^^-->
 
-<!--STARTSIDA-->
-<!--bild,rubrik, beskrivning, knappar för att skapa inlägg-->
+<!-- Startpage with a welcome message and a call to action to log in or create an account. -->
 
 <!DOCTYPE html>
 <html lang="sv">
@@ -54,7 +52,6 @@ Du har lyckats logga ut! :-)
 </head>
 
 <body>
-    <!--Taggar, header osv-->
     <main class="background d-flex flex-column text-white">
 
         <div class="container text-center">
@@ -75,13 +72,12 @@ Du har lyckats logga ut! :-)
                     <a href="add.posts.php" class="btn btn-success btn-lg">Skapa inlägg</a>
                 </div>
             <?php else: ?>
-             <div class="mb-4 ">
+                <div class="mb-4 ">
                     <a href="add.php" class="btn btn-primary btn-lg me-2">Skapa konto</a>
                     <a href="login.php" class="btn btn-success btn-lg">Logga in</a>
-                </div>   
+                </div>
             <?php endif; ?>
         </div>
-     </div>
 
     </main>
 
