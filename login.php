@@ -1,5 +1,5 @@
 <?php
-// Inloggningsformulär med Bootstrap 5. Koden är granskad enligt W3C.
+// Login form with Bootstrap 5. The code is validated according to W3C.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
